@@ -50,6 +50,55 @@ app.get("/users/:login", (req, res) => {
       res.json(results);
   });
 });
+
+// SELECIONA TUDO DE UM USER COM ID ESPECIFICO
+app.get("/users/userId/:idUser", (req, res) => {
+  connection.query("SELECT * from users where id = ?", [req.params.idUser], (err, results) => {
+      if (err) {
+          return res.status(500).send('MySQL Connection error');
+      }
+      res.json(results);
+  });
+});
+
+// ATUALIZA O NÍVEL DE UM USUÁRIO
+app.put("/users/updateLevel", (req, res) => {
+    const { id, nivel } = req.body;
+
+    if (!id || (nivel !== 1 && nivel !== 2)) {
+        return res.status(400).json({ error: "ID do usuário e nível válido são obrigatórios!" });
+    }
+
+    connection.query("SELECT * FROM users WHERE id = ?", [id], (err, results) => {
+        if (err) {
+            console.error("Erro ao buscar usuário:", err);
+            return res.status(500).json({ error: "Erro ao buscar usuário" });
+        }
+        
+        if (results.length === 0) {
+            return res.status(404).json({ error: "Usuário não encontrado!" });
+        }
+
+        connection.query(
+            "UPDATE users SET nivel = ? WHERE id = ?",
+            [nivel, id],
+            (err, updateResults) => {
+                if (err) {
+                    console.error("Erro ao atualizar nível do usuário:", err);
+                    return res.status(500).json({ error: "Erro ao atualizar nível do usuário" });
+                }
+
+                if (updateResults.affectedRows === 0) {
+                    return res.status(400).json({ error: "Nenhuma alteração feita!" });
+                }
+
+                res.json({ message: "Nível do usuário atualizado com sucesso!" });
+            }
+        );
+    });
+});
+
+
  
 //SELECIONA TUDO DE TASKS DE UM ID_USER ESPECIFICO
 app.get("/tasks/:id_user", (req, res) => {
@@ -106,13 +155,27 @@ app.post("/create/task", (req, res) => {
   );
 });
 
+//ATUALIZA (UPDATE) UMA NOVA TAREFA
+app.post("/tasks/updateTask", (req, res) => {
+    connection.query("UPDATE tasks SET title = ?, descricao = ?, status = ?, responsavel = ?, prioridade = ?, prazo = ? WHERE id = ?",
+        [req.body.inputTaskName, req.body.inputMessage, req.body.status, req.body.inputResponsible, req.body.priority, req.body.inputDeadline, req.body.source],
+        (err, results) => {
+            if (err) {
+                console.error('MySQL Connection error:', err);
+                return res.status(500).send('MySQL Connection error');
+            }
+            res.json('ok');
+        }
+    );
+});
+
 // DELETA UM USUÁRIO PELO LOGIN
 app.delete("/delete/user/:login", (req, res) => {
   const { login } = req.params;
 
-  connection.query("DELETE FROM users WHERE login = ?", [login], (err, results) => {
+  connection.query("DELETE FROM users WHERE id = ?", [login], (err, results) => {
       if (err) {
-          return res.status(500).send("MySQL Connection error");
+          return res.status(500).send("MySQL Connection eerror");
       }
       if (results.affectedRows === 0) {
           return res.status(404).send("Usuário não encontrado");

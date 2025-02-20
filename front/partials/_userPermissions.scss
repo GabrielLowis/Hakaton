@@ -3,12 +3,19 @@
 }
 
 #container-permissions {
+  overflow-y: auto;
+  max-height: 80%;
   width: 80%;
   margin: auto;
   background: $linear;
   padding: 20px;
   border-radius: 10px;
-  margin-top: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.table-rows{
+  border-bottom: 1px solid #ccc;
 }
 
 #userTable {

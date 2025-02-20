@@ -1,8 +1,4 @@
 #add-task-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   min-height: 100dvh;
   background: $linear;
 }
@@ -32,11 +28,7 @@
 }
 
 #add-task-form-container {
-  // margin-top: 110px;
-//   position: fixed;
-//   top: 50%;
-// left: 50%;
-// transform: translate(-50%, 50%);
+  margin: 0 auto;
   max-width: 700px;
   background-color: black;
   padding: 30px;
@@ -99,7 +91,8 @@
       filter: drop-shadow(1px 1px 0px $linear);
       flex-basis: 30%;
 
-      .reset-button, .delete-button {
+      .reset-button,
+      .delete-button {
         position: relative;
         text-align: center;
         padding: 10px;
@@ -123,7 +116,6 @@
     }
   }
 }
-
 
 .heading {
   display: block;
@@ -201,4 +193,3 @@ label,
     font-size: 1rem;
   }
 }
-
