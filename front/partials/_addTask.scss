@@ -1,0 +1,204 @@
+#add-task-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  background: $linear;
+}
+
+.links {
+  display: flex;
+  margin: 0 20px;
+  gap: 30px;
+}
+
+.btns-tasks {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btns-tasks:hover {
+  color: $primary-color;
+}
+
+#add-task-form-container {
+  // margin-top: 110px;
+//   position: fixed;
+//   top: 50%;
+// left: 50%;
+// transform: translate(-50%, 50%);
+  max-width: 700px;
+  background-color: black;
+  padding: 30px;
+  border-left: 5px solid white;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0 100%
+  );
+}
+
+.form {
+  .input,
+  .textarea {
+    width: 100%;
+    background-color: white;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease-in-out;
+    border-left: 1px solid transparent;
+
+    &:focus {
+      border-left: 5px solid $primary-color;
+    }
+  }
+
+  .textarea {
+    resize: none;
+    max-height: 150px;
+    color: $linear;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+
+    .send-button {
+      flex-basis: 70%;
+      background: $linear;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      border: 1px solid transparent;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background: #001925;
+        border: 1px solid $linear;
+        color: $linear;
+      }
+    }
+
+    .reset-button-container {
+      filter: drop-shadow(1px 1px 0px $linear);
+      flex-basis: 30%;
+
+      .reset-button, .delete-button {
+        position: relative;
+        text-align: center;
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+        background: #001925;
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% calc(100% - 10px),
+          calc(100% - 10px) 100%,
+          0 100%
+        );
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background: $secondary-color;
+          color: $linear;
+        }
+      }
+    }
+  }
+}
+
+
+.heading {
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.selects {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  align-self: flex-start;
+  padding-bottom: 15px;
+
+  select,
+  input {
+    padding: 5px 10px;
+    background-color: white;
+    color: #808080;
+    border: none;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+label,
+#reset-btn {
+  color: white;
+}
+
+@media (min-width: 600px) {
+  .selects {
+    flex-direction: row;
+    justify-content: space-between;
+
+    div {
+      flex: 1;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #add-taskform-container {
+    padding: 20px;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .selects,
+  .button-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 965px) {
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+
+  .heading {
+    font-size: 1rem;
+  }
+}
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permissões de Usuário</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../scripts/userPermissions.js" defer></script>
+</head>
+<body>
+    <body id="body-permissions">
+        <header class="header">
+            <div class="header-logo">
+                <img src="../src/Logo.png" alt="">
+            </div>
+            <div class="links">
+                <a id="btnGerenciar" class="btns-tasks" href="../pages/tasks.html">Voltar</a>
+                <a id="btnAddTask" class="btns-tasks" href="../pages/addTask.html">Adicionar Tarefa</a>
+                <a id="btnGerenciar" class="btns-tasks" href="">Gerenciamento de usuários</a>
+            </div>
+        </header>
+        <div id="container-permissions">
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th id="nameHeader">Nome</th>
+                        <th id="loginHeader">Login</th>
+                        <th id="actionsHeader">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="userName">Gabriel Luis de Lima Ramos</td>
+                        <td class="userLogin">naoseioqnaoseioqla@gmail.com</td>
+                        <td class="userActions">
+                            <button class="deleteBtn">🗑️</button>
+                            <button class="permitBtn">✅</button>
+                            <button class="denyBtn">❌</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="userName">Manuela Leme Morais Almeida</td>
+                        <td class="userLogin">naoseioqnaoseioqla@gmail.com</td>
+                        <td class="userActions">
+                            <button class="deleteBtn">🗑️</button>
+                            <button class="permitBtn">✅</button>
+                            <button class="denyBtn">❌</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="userName">Murilo Moreno Figueroa Vieira</td>
+                        <td class="userLogin">naoseioqnaoseioqla@gmail.com</td>
+                        <td class="userActions">
+                            <button class="deleteBtn">🗑️</button>
+                            <button class="permitBtn">✅</button>
+                            <button class="denyBtn">❌</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  margin-bottom: 15px;
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: $footer-bg;
+
+  .header-logo{
+    margin: 8px 0 0 8px;
+  }
+  .header-logo img{
+    max-width: 60px;
+    background-color: white;
+    border-radius: 50%;
+  }
+}

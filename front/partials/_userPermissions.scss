@@ -1,0 +1,92 @@
+#body-permissions {
+  background-color: #ccc;
+}
+
+#container-permissions {
+  width: 80%;
+  margin: auto;
+  background: $linear;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10%;
+}
+
+#userTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #333;
+  color: white;
+}
+#userTable th,
+#userTable td {
+  padding: 15px;
+  text-align: left;
+}
+#nameHeader {
+  background: #222;
+}
+#loginHeader {
+  background: #444;
+}
+#actionsHeader {
+  background: #555;
+}
+.userActions button {
+  margin: 0 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+.deleteBtn {
+  color: red;
+}
+.permitBtn {
+  color: white;
+}
+.denyBtn {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  #container-permissions {
+    width: 95%;
+    padding: 10px;
+  }
+  #userTable th,
+  #userTable td {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .userActions button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #userTable thead {
+    display: none;
+  }
+  #userTable tbody tr {
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  #userTable td {
+    display: block;
+    text-align: right;
+    padding: 5px;
+    font-size: 12px;
+  }
+  #userTable td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .userActions button {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <script type="module" src="../scripts/tasks.js" defer></script>
+    <title>Tarefas Gerais</title>
+</head>
+
+<body id="bodyTasks">
+    <main id="mainTasks">
+        <header class="header">
+            <div class="header-logo">
+                <img src="../src/Logo.png" alt="">
+            </div>
+            <div class="links">
+                <a id="btnGerenciar" class="btns-tasks" href="../index.html">Sair</a>
+                <a id="btnAddTask" class="btns-tasks" href="../pages/addTask.html">Adicionar Tarefa</a>
+                <a id="btnGerenciar" class="btns-tasks" href="../pages/userPermissions.html">Gerenciamento de usuários</a>
+            </div>
+        </header>
+
+            <table id="tableTasks">
+                <thead>
+                    <tr>
+                        <th id="tarefa"><i class="bi bi-clipboard-fill"></i>Tarefas<div class="resizer"></div>
+                        </th>
+                        <th id="status">
+                            Status
+                            <div class="resizer"></div>
+                        </th>
+                        <th id="responsavel">
+                            Responsável
+                            <div class="resizer"></div>
+                        </th>
+                        <th id="prazo">
+                            Prazo
+                            <div class="resizer"></div>
+                        </th>
+                        <th id="prioridade">
+                            Prioridade
+                            <div class="resizer"></div>
+                        </th>
+                        <th id="descricao">
+                            Descrição
+                            <div class="resizer"></div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbody">
+                </tbody>
+            </table>
+
+            <footer>
+                <p>
+                  Criado por
+                  <a target="_blank" href="https://florin-pop.com">Dev Team</a>
+                  - Confira outro projeto
+                  <a
+                    target="_blank"
+                    href="https://formatura-3e.netlify.app/"
+                    >aqui</a
+                  >.
+                </p>
+              </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const resizers = document.querySelectorAll(".resizer");
+            resizers.forEach((resizer) => {
+                let startX, startWidth, th;
+                resizer.addEventListener("mousedown", (e) => {
+                    th = e.target.parentElement;
+                    startX = e.pageX;
+                    startWidth = th.offsetWidth;
+                    document.addEventListener("mousemove", resize);
+                    document.addEventListener("mouseup", stopResize);
+                });
+                function resize(e) {
+                    const newWidth = startWidth + (e.pageX - startX);
+                    th.style.width = newWidth + "px";
+                }
+                function stopResize() {
+                    document.removeEventListener("mousemove", resize);
+                    document.removeEventListener("mouseup", stopResize);
+                }
+            });
+        });
+
+        function resetTable() {
+            document.querySelectorAll("th").forEach((th) => {
+                th.style.width = "";
+            });
+        }
+    </script>
+</body>
+
+</html>

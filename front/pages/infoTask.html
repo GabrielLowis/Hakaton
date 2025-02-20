@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script type="module" src="../scripts/addTask.js" defer></script> -->
+    <title>Adicionar Tarefa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <script src="../scripts/infoTask.js" defer></script>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body id="add-task-body">
+    <header class="header">
+      <div class="header-logo">
+        <img src="../src/Logo.png" alt="" />
+      </div>
+      <div class="links">
+        <a id="btnGerenciar" class="btns-tasks" href="../pages/tasks.html">Voltar</a>
+        <a id="btnAddTask" class="btns-tasks" href="../pages/addTask.html"
+          >Adicionar Tarefa</a
+        >
+        <a
+          id="btnGerenciar"
+          class="btns-tasks"
+          href="../pages/userPermissions.html"
+          >Gerenciamento de usuários</a
+        >
+      </div>
+    </header>
+    <div class="form-container" id="add-task-form-container">
+      <div class="form">
+        <span class="heading">Adicionar tarefas</span>
+        <label for="responsible-name">Nome do Responsável</label>
+        <input
+          placeholder="Escreva seu nome"
+          type="text"
+          id="input-responsible"
+          class="input"
+        />
+        <label for="task-name">Nome da Tarefa</label>
+        <input
+          placeholder="Nome da Tarefa"
+          type="text"
+          id="input-task-name"
+          class="input"
+        />
+        <div class="selects">
+          <div>
+            <label for="deadline">Prazo</label>
+            <input type="date" id="input-deadline" />
+          </div>
+          <div>
+            <label for="status">Status</label>
+            <select name="status" id="status">
+              <option value="Concluído">Concluído</option>
+              <option value="Em Andamento">Em Andamento</option>
+              <option value="A Fazer">A Fazer</option>
+            </select>
+          </div>
+          <div>
+            <label for="priority">Prioridade</label>
+            <select name="priority" id="priority">
+              <option value="Alta">Alta</option>
+              <option value="Média">Média</option>
+              <option value="Baixa">Baixa</option>
+            </select>
+          </div>
+        </div>
+        <label for="message">Descrição</label>
+        <textarea
+          placeholder="Descrição e Mensagem"
+          rows="10"
+          cols="30"
+          id="input-message"
+          name="message"
+          class="textarea"
+        ></textarea>
+        <div class="button-container">
+          <div class="send-button" id="btn-add-task">Atualizar</div>
+          <div class="reset-button-container">
+            <div id="delete-btn" class="delete-button">Deletar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

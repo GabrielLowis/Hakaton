@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script type="module" src="./scripts/login.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <script src="scripts/script.js" defer></script>
+  </head>
+  <body id="login-body">
+    <div class="login-logo">
+        <img src="./src/logo.png" alt="Logo">
+    </div>
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form class="sign" action="#">
+          <h1>Criar conta</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fa-brands fa-github"></i></a>
+          </div>
+          <span>Use seu e-mail para se registrar</span>
+          <input type="text" required minlength="3" maxlength="50" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$" placeholder="Nome" id="input-nome"  title="O nome deve conter apenas letras e espaços" />
+          <input type="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="E-mail" id="input-email-cadastro" title="Digite um e-mail válido" />
+          <input type="password" required minlength="4" maxlength="20" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$" placeholder="Senha" id="input-passwrd-cadastro" title="A senha deve ter pelo menos 4 caracteres, incluindo pelo menos uma letra e um número" />
+          <button class="main-buttons" id="sign-up">Cadastrar</button>
+        </form>
+        <!-- required minlength="2" maxlength="50" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$" -->
+        <!-- required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" -->
+        <!-- required minlength="4" maxlength="20" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$" -->
+      </div>
+      <div class="form-container sign-in-container">
+        <form class="sign" 
+         action="#">
+          <h1>Entrar</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fa-brands fa-github"></i></a>
+          </div>
+          <span>Use sua conta!</span>
+          <input type="email" placeholder="E-mail" id="input-email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Digite um e-mail válido" placeholder="E-mail" id="input-email" />
+          <input type="password" placeholder="Senha" id="input-passwrd" required minlength="4" maxlength="20" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$" title="A senha deve ter pelo menos 4 caracteres, incluindo pelo menos uma letra e um número" />
+          <!-- <input type="email" placeholder="E-mail" id="input-email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Digite um e-mail válido" /> -->
+          <!-- <input type="password" placeholder="Senha" required minlength="4" maxlength="20" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$" title="A senha deve ter pelo menos 4 caracteres, incluindo pelo menos uma letra e um número" /> -->
+          <a href="#">Esqueceu sua senha?</a>
+          <button class="main-buttons" id="btn-login">Entrar</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Bem vindo de volta!</h1>
+            <p>
+              Para continuar conectado conosco, faça login com suas informações pessoais
+            </p>
+            <button class="ghost" id="signIn">Entrar</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Seja bem vindo!</h1>
+            <p>Insira seus dados pessoais e comece sua jornada conosco</p>
+            <button class="ghost" id="signUp">Cadastrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>
+        Criado por
+        <a target="_blank" href="https://florin-pop.com">Dev Team</a>
+        - Confira outro projeto
+        <a
+          target="_blank"
+          href="https://formatura-3e.netlify.app/"
+          >aqui</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
